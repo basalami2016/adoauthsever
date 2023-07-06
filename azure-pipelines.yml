@@ -12,6 +12,20 @@ pool:
   vmImage: 'windows-latest'
 
 stages:
+
+- stage: CI/CDStart
+  jobs:
+  - job: CI/CDSWork
+    steps:   
+    - task: CmdLine@2      
+      inputs:
+        workingDirectory: $(Build.SourcesDirectory) #Default to Build.SourcesDirectory if empty
+        script: |          
+          cd $(Build.SourcesDirectory)
+          dir
+          echo Write your commands here          
+          echo Hello world     
+
 - stage: WorkspaceOps #workspace is a directory used by agent
   jobs:
   - job: WorkspaceOpsWork
