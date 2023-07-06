@@ -31,7 +31,8 @@ stages:
     steps:   
     - task: MicrosoftSecurityDevOps@1
       displayName: 'Microsoft Security DevOps'
-
+    - script: echo Hello, world!
+      displayName: 'Run a one-line script'
  
 
     
